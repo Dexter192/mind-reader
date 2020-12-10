@@ -1,0 +1,97 @@
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(#F3C6D1, #90CCDE);
+  margin: 0;
+  height: 100%;
+}
+
+.root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.visible {
+  border: 2px solid green;
+}
+
+.notvisible {
+  border: 2px solid red;
+}
+
+.guessed {
+  border: 2px solid green;
+}
+
+.notguessed {
+  border: 2px solid red;
+}
+
+.wordContainer {
+  border: 2px solid black;  
+  width: 18%;
+  float:left;
+  margin: 10px;
+  min-height: 80%;
+}
+
+.word {
+  text-align: center;
+}
+
+.wordHeader {
+  text-align: center;
+}
+
+.playerGuess {
+  border: 2px solid black;  
+}
+
+.removeWord {
+  display: flex;
+  justify-content: center;
+}
+
+.timerDiv {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.timer {
+  background-color:#A09BCC;
+  border: 2px solid #3a3568;
+  color:#9f0000;
+  padding: 5px;
+  font-size: 35px;
+  font-family:'Orbitron';
+}
+
+.title {
+  color: darkred;
+  text-align: center;
+  font-size: 75px;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.wordMenu, .wordTable {
+  width: 100%;
+}

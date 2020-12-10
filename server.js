@@ -165,6 +165,8 @@ io.on('connection', socket => {
       global.time = global.time - 1;
       io.emit('update timer', global.time);
       if(global.time <= 0) {
+	global.time = 45
+	io.emit('update timer', global.time);
         clearInterval(global.timer)
       }
     }, 1000);

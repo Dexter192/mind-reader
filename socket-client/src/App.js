@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="root">
         {(this.state.screen === undefined || this.state.screen === "Home") && <Home />}
         {this.state.screen === "Game" && <Game />}
       </div>

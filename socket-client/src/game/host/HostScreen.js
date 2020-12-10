@@ -4,6 +4,7 @@ import CurrentPlayers from "./CurrentPlayers"
 import WordMenu from "./WordMenu"
 import WordTable from "../util/WordTable"
 import Timer from "../util/Timer"
+import Score from "../util/Score"
 
 class HostScreen extends React.Component {
 
@@ -34,12 +35,13 @@ class HostScreen extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="root">
         <h1 className="title">Mind-Reader</h1>
         <CurrentPlayers data={{setPlayerList:this.setPlayerList.bind(this)}}/>
         <WordMenu/>
         <Timer data={{"type":"host"}}/>
         <WordTable data={{"wordList":this.state.wordList, "players":this.state.players, "type":"host"}} />
+        <Score data={{"players":this.state.players, "type":"host"}}/>
       </div>
     );
   }

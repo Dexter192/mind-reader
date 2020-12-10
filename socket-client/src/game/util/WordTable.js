@@ -48,6 +48,8 @@ class WordTable extends React.Component {
   }
 
   buildWord = (index, word, players, type) => {
+    var colours = ['#8934B8', '#0A53DE', '#24D024', '#FBF21A', '#FB6F24', '#EA0D0D']
+    var playerIndex = 1;
     if(type === "host") {
       var visibleClass = "not".repeat(1-word["visible"]) + "visible";
       return (
@@ -56,7 +58,8 @@ class WordTable extends React.Component {
             <div className="playerGuesses">
               {players.map(player => {
               var guessed = "not".repeat(1-player["guesses"][index]) + "guessed";
-              return <span className={guessed} onClick={() => this.togglePlayerGuess(player["id"], index)}>{player["name"]} + </span>
+              playerIndex += 1;
+              return <p className={guessed} onClick={() => this.togglePlayerGuess(player["id"], index)}>{player["name"]} + </p>
             })} 
             <button className="removeWord" onClick={() => this.removeWord(index)}>Remove</button>
           </div>
@@ -70,10 +73,11 @@ class WordTable extends React.Component {
               <h1>{word["word"]}</h1>
                 <div className="playerGuesses">
                 {players.map(player => {
-                  if (player["guesses"][index]) {
-                    return <span className="playerGuess">{player["name"]}</span>
+                    playerIndex += 1;
+                    if (player["guesses"][index]) {
+                    return <p style={{'background-color':colours[playerIndex%colours.length]}} className="playerGuess">{player["name"]}</p>
                   }
-                  return <span className="playerGuess"></span>
+                  return <p className="playerGuess"></p>
                 })} 
                 </div>
             </div>

@@ -1,5 +1,4 @@
 html, body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,11 +6,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(#F3C6D1, #90CCDE);
   margin: 0;
-  height: 100%;
-}
-
-.root {
-  height: 100%;
+  height: 100vh;
 }
 
 code {
@@ -33,19 +28,30 @@ code {
 }
 
 .guessed {
-  border: 2px solid green;
+  margin: 4px;
+  background-color: lemonchiffon;
+  border: 3px solid green;
 }
 
 .notguessed {
-  border: 2px solid red;
+  margin: 4px;
+  background-color: lemonchiffon;
+  border: 3px solid red;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  height: 65vh;
+  margin: 0;
 }
 
 .wordContainer {
   border: 2px solid black;  
-  width: 18%;
+  width: 17.5vw;
   float:left;
-  margin: 10px;
-  min-height: 80%;
+  margin: 1vh 1vw;
+  height: 30vh;
 }
 
 .word {
@@ -57,7 +63,8 @@ code {
 }
 
 .playerGuess {
-  border: 2px solid black;  
+  margin: 0;
+  /*border: 2px solid #3a3568;*/
 }
 
 .removeWord {
@@ -69,6 +76,7 @@ code {
   text-align: center;
   width: fit-content;
   margin: auto;
+  height: 10vh;
 }
 
 .timer {
@@ -84,14 +92,36 @@ code {
   color: darkred;
   text-align: center;
   font-size: 75px;
-}
-
-.frame {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  height: 10vh;
+  margin: 0;
 }
 
 .wordMenu, .wordTable {
   width: 100%;
+}
+
+.score {
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+}
+
+.playerScore {
+  border: 2px solid #3a3568;
+  float:left;
+  height: 100%;
+  margin: 0;
+}
+
+.playerName {
+  text-align: center;
+  margin: 8px;
+  font-weight: 1000;
+  font-size: 15px;
+}
+
+.pScore {
+  text-align: center;
+  font-weight: 1000;
+  font-family:'Orbitron';
 }

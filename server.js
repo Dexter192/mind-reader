@@ -45,7 +45,7 @@ io.on('connection', socket => {
       global.users["host"][id] = ({"name": name, "socket": socket.id});
     } 
     else if (type === "player") {
-      global.users["players"][id] = ({"name": name, "socket": socket.id, "guesses": new Array(global.wordList.length).fill(false)});
+      global.users["players"][id] = ({"name": name, "socket": socket.id, "score": 0, "guesses": new Array(global.wordList.length).fill(false)});
     } 
     console.log("Current players: " + JSON.stringify(global.users, null, 4));
     io.to(socket.id).emit('toggle screen', 'Game');
@@ -132,6 +132,20 @@ io.on('connection', socket => {
   
   ///
   
+  socket.on('add score', (playerId) => {
+    global.users.players[playerId]["score"] += 1;
+    io.emit('update players', global.users.players);
+  })
+  
+  ///
+
+  socket.on('subtract score', (playerId) => {
+    global.users.players[playerId]["score"] -= 1;
+    io.emit('update players', global.users.players);
+  })
+  
+  ///
+
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })

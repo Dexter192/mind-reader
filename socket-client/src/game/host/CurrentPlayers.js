@@ -29,7 +29,7 @@ class CurrentPlayers extends React.Component {
     socket.on('update players', (players) => {
       console.log("Updating players")
       var p = [];
-      Object.entries(players).map(player => p.push({"id":player[0], "name":player[1]["name"], "guesses":player[1]["guesses"]}));
+      Object.entries(players).map(player => p.push({"id":player[0], "name":player[1]["name"], "score":player[1]["score"], "guesses":player[1]["guesses"]}));
       this.setState({players: p});
       this.props.data.setPlayerList(p);
     })

@@ -2,6 +2,7 @@ import React from 'react';
 import {socket} from "../../service/socket";
 import WordTable from "../util/WordTable"
 import Timer from "../util/Timer"
+import Score from "../util/Score"
 
 class PlayerScreen extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class PlayerScreen extends React.Component {
       players: [],
       wordList: []
     };
+    socket.emit('get players')
     socket.emit('fetch wordlist')
   }
   
@@ -27,7 +29,7 @@ class PlayerScreen extends React.Component {
     })  
     socket.on('update players', (players) => {
         var p = [];
-        Object.entries(players).map(player => p.push({"id":player[0], "name":player[1]["name"], "guesses":player[1]["guesses"]}));
+        Object.entries(players).map(player => p.push({"id":player[0], "name":player[1]["name"], "score":player[1]["score"], "guesses":player[1]["guesses"]}));
         this.setState({players: p});
     })
   }
@@ -38,10 +40,11 @@ class PlayerScreen extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="root">
         <h1 className="title">Mind-Reader</h1>
         <Timer data={{"type":"player"}}/>
-        <WordTable data={{"wordList":this.state.wordList, "players":this.state.players, "type":"player"}} /> 
+        <WordTable data={{"wordList":this.state.wordList, "players":this.state.players, "type":"player"}} />
+        <Score data={{"players":this.state.players, "type":"player"}} />
       </div>
     );
   }

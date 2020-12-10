@@ -10,11 +10,6 @@ class PlayerScreen extends React.Component {
       players: [],
       wordList: []
     };
-    socket.emit('clear wordList');
-    this.tempAddWord("Word1")
-    this.tempAddWord("Word2")
-    this.tempAddWord("Word3")
-    this.tempAddWord("Word4")  
     socket.emit('fetch wordlist')
   }
   

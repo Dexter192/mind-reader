@@ -73,6 +73,7 @@ class WordTable extends React.Component {
                   if (player["guesses"][index]) {
                     return <span className="playerGuess">{player["name"]}</span>
                   }
+                  return <span className="playerGuess"></span>
                 })} 
                 </div>
             </div>

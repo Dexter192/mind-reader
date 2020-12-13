@@ -3,4 +3,4 @@ A simple Website that I bodged within a week to host a virtual pints evening wit
 
 TODO: Add Readme and example gifs
 
-![mindreader-example][ReadMeFiles\Demo_Image.jpg]
+![mindreader-example](ReadMeFiles\Demo_Image.jpg)

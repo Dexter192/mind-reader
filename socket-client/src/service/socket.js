@@ -1,3 +1,3 @@
 import io from "socket.io-client";
 
-export const socket = io("http://164.68.96.192:4001");
+export const socket = io("http://localhost:4001");

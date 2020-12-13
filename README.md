@@ -53,10 +53,13 @@ Finally, to connect the React js and socket io parts of the app, replace **local
 
 ## Demonstration
 Login and adding words
+
 ![mindreader-example](ReadMeFiles/Login.gif)
 
 Revealing words and guesses
+
 ![mindreader-example](ReadMeFiles/Toggle_words.gif)
 
 Multiple players
+
 ![mindreader-example](ReadMeFiles/Toggle_playerView.gif)
